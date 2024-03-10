@@ -2,13 +2,18 @@
 .border{
   border-bottom: solid 4px white;
 }
-
+.start{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+color: green;
+}
 body{
     padding: 0px;
     margin: 0px;
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-color: #171717;
   overflow-x: hidden;
+  color: white;
 }
 @keyframes goaway {
   from{
@@ -21,7 +26,7 @@ body{
 }
 .parallax {
   background-image: url(white.jpg);
-  height: 100vh; 
+  /* height: 100vh;  */
   background-repeat: no-repeat;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
   background-size: cover;
@@ -29,33 +34,34 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: goaway 3s 1;
+  /* animation: goaway 3s 1; */
 }
 .items {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
+    margin-left: 19%;
+    gap: 10px;
+    width: 80%;
     height: 80%;
     margin-top: 100px;
-    margin-left: 100px;
 }
 .item {
     backdrop-filter: blur(1rem);
-    border: 0.1px solid;
-    height: 450px;
-    width: 400px;
+    height: 350px;
+    width: 250px;
     border-radius: 30px;
+    padding-bottom: 5px;
     padding: 20px; /* Added padding for better content spacing */
-    font-size: 17px;
+    font-size: 16px;
     font-family: cursive;
-    background-color: whitesmoke;
+    background-color: #333;
 }
 .item img {
-    height: 300px;
+    height: 50%;
     width: 100%; 
     border-radius: 15px; 
     object-fit:fill; 
+    /* border: solid white; */
 }
 .a{
     display: flex;
@@ -79,16 +85,24 @@ body{
 .butn{
     background-color: limegreen;
     border: solid black;
-    height: 50px;
+    height: 40px;
     width: 100px;
     border-radius: 20px;
 }
+.main{
+  display: flex;
+  width: 100%;
+}
 .left{
-    height: 100%;
-    width: 10%;
-    background-color: black;
-    border: solid white;
+    height: 100vh;
+    width: 15%;
+    position: fixed;
+    background-color: #444444;
     padding-top: 5rem;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .navbtn{
     height: 100%;
@@ -100,7 +114,7 @@ body{
     flex-direction: column;
     z-index: 2;
    position: fixed;
-   transition: background-color 0.3s ease;
+   /* transition: background-color 0.3s ease; */
    background-color: black;
    z-index: 1;
 }
@@ -128,10 +142,15 @@ body{
   font-size: 30px;
   cursor: pointer;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 315px;
+}
+.sort{
+  font-size: 20px;
+  cursor: pointer;
+  margin: 20px;
 }
 .buttons a{
   color: white;
@@ -183,9 +202,6 @@ body{
   @keyframes revanim {
     from{opacity: 0;}
     to{opacity: 1;}
-  }
-  .sort{
-    color: red;
   }
 .top img {
     height: 70%;

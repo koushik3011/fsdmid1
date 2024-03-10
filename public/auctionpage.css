@@ -1,0 +1,85 @@
+#navbar{
+    display: flex;
+    flex-direction: column;
+   background-color: #082032 ;
+   color: #F0F3FF;
+   align-items: end;
+}
+.box{
+    margin: 50px ;
+    margin-left: 150px;
+    margin-right: 150px;
+    border: solid;
+ padding: 20px;
+ background-image: -webkit-linear-gradient(10deg, #082032 50%, #334756 50%);
+
+}
+.main{
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+    
+}
+.bid{
+    color: red;
+    font-size: 25px;
+}
+.main img{
+    height: 300px;
+    width: 400px;
+    margin-right: 200px;
+}
+.in{
+    display: inline;
+    height: 50px;
+    width: 200px;
+    border: solid;
+    border-radius: 20px;
+}
+
+.l{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 1000px;
+}
+.item{
+    height: 400px;
+    width: 400px;
+}
+.item img{
+  height: 200px;
+  width: 200px;
+}
+.butn{
+    background-color: limegreen;
+    border: solid white;
+    width: 150px;
+    height: 30px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color:  #334756 ;
+    font-family: "Montserrat", sans-serif;
+}
+input{
+    height: 50px;
+    width: 400px;
+    margin: 20px;
+    padding: 10px;
+    margin-left: 600px;
+    border-radius: 20px;
+}
+button{
+    height: 50px;
+    width: 75px;
+    color: white;
+    background-color: lime;
+}

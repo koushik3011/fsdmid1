@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -122,16 +121,7 @@ app.get("/:userid/auction/item/:itemid", async function (req, res) {
       res.send("item sold");
       res.redirect("/user/" + req.params.userid);
     }
-    if (result.pid == req.params.userid) {
-      res.redirect(
-        "/" +
-          req.params.userid +
-          "/auction/item/" +
-          req.params.itemid +
-          "/owner"
-      );
-      return;
-    }
+  
     var data = {
       user: req.params.userid,
       username: name,
@@ -283,60 +273,6 @@ app.post("/:sellerid/create", function (req, res) {
   res.redirect("/seller/" + req.params.sellerid);
 });
 
-//route for owner of the item
-app.get("/sell/:seller/:itemid", async function (req, res) {
-  console.log("okaqy");
-  var name = " ";
-  await sellermodel.findOne({ _id: req.params.seller }).then((result) => {
-    name = result.name;
-  });
-  await itemmodel.findOne({ _id: req.params.itemid }).then((result) => {
-    if (result === undefined) {
-      res.send("item no  more for auction");
-      return;
-    }
-    if (result.aution_active) {
-      res.send("item sold");
-    }
-    var data = {
-      user: req.params.seller,
-      username: name,
-      item: result,
-    };
-    res.render("ownerpage", { arr: data });
-  });
-});
-app.post("/sell/:seller/:itemid", async function (req, res) {
-  var solditem;
-  await itemmodel.findOne({ _id: req.params.itemid }).then(async (result) => {
-    if (!result) {
-      res.send("itemsold");
-    }
-    result.person = result.current_bidder;
-    result.save();
-    console.log("after", result);
-    solditem = result;
-    //deleting in owner
-    await sellermodel.findOneAndUpdate(
-      { _id: req.params.seller },
-      { $pull: { items: { _id: req.params.itemid } } },
-      { new: true }
-    );
-
-    //adding in buyer
-    console.log("sold", solditem);
-    var buyer = result.current_bidder_id;
-    console.log(buyer);
-    await usermodel.findOne({ _id: buyer }).then((user) => {
-      console.log(user);
-      var itemlength = user.items.length;
-      user.items[itemlength] = solditem;
-      user.save();
-    });
-  });
-  await itemmodel.deleteOne({ _id: req.params.itemid });
-  res.redirect("/seller/" + req.params.seller);
-});
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/intro.html");
 });

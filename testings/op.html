@@ -4,102 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-             body {
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-        .sidebar a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-        .sidebar a:hover {
-            color: #f1f1f1;
-        }
-        .sidebar .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-        #main {
-            transition: margin-left .5s;
-            padding: 16px;
-        }
-        @media screen and (max-height: 450px) {
-            .sidebar {padding-top: 15px;}
-            .sidebar a {font-size: 18px;}
-        }
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .navbar a.logo {
-            font-size: 18px;
-            padding: 10px 10px;
-            margin-right: 20px;
-        }
-        .navbar a:not(:first-child) {
-            margin-left: 20px;
-        }
-    </style>
 </head>
+<style>
+    
+    .box {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+        position: absolute;
+    }
+.c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.b {
+    height: 110px;
+    width: 110px;
+    border-radius: 0px;
+    background-color: #2c2c2c;
+}
+
+/* .b:hover {
+    -webkit-box-shadow: -1px -1px 95px 9px rgba(0, 255, 21, 1);
+    -moz-box-shadow: -1px -1px 95px 9px rgba(0, 255, 21, 1);
+    box-shadow: -1px -1px 95px 9px rgba(0, 255, 21, 1);
+    background-color: lawngreen;
+
+}
+
+.b:not(:hover) {
+    transition-delay: 0.5s; 
+    box-shadow: none; 
+    animation: color 2s 1 ;
+} */
+
+    .move {
+        z-index: -1;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        position: relative;
+        background: rgb(110,195,34);
+background: linear-gradient(69deg, rgba(110,195,34,1) 5%, rgba(46,253,45,1) 77%);      
+  animation: anim 2s infinite linear;       
+    }
+.ball{
+    height: 10px;
+    width: 50px;
+    background-color: #00FFF5;
+    z-index: 3;
+    position: fixed;
+}
+    body {
+        background-color: black;
+        height: 100vh;
+    }
+    @keyframes color {
+        0%{
+            background-color: lawngreen;
+        }
+        100%{
+            background-color: black;
+        }
+    }
+</style>
 <body>
-    <div class="navbar">
-        <a href="#" class="logo">Logo</a>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+
+    <div class="box">
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
+      <div class="b"></div>
     </div>
-    <h2>Top Navigation Bar</h2>
-    <p>This example demonstrates a top navigation bar using HTML and CSS.</p>
+    <!-- <div class="move" id="m" >
+    </div> -->
+
 </body>
+
+<script>
+document.addEventListener("mouseover", function (q) {
+    const para = document.createElement("div");
+    para.classList.add("ball");
+
+    // Set the initial position
+    para.style.top = q.clientY + "px";
+    para.style.left = q.clientX + "px";
+
+    // Set the initial speed (adjust as needed)
+    let speedY = 10;
+
+    // Update position at regular intervals
+    const intervalId = setInterval(() => {
+        // Update the position based on the speed
+        para.style.top = para.offsetTop + speedY + "px";
+
+        // Check if the ball is out of the window
+        if (para.offsetTop > window.innerHeight) {
+            clearInterval(intervalId); // Stop the interval when the ball is out of the window
+            para.parentNode.removeChild(para);
+        }
+    }, 10);
+
+    document.body.appendChild(para);
+
+    setTimeout(() => {
+        clearInterval(intervalId); // Stop the interval after 5000 milliseconds
+        para.parentNode.removeChild(para);
+    }, 5000);
+});
+
+
+</script>
+
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <link rel="stylesheet" type="text/css" href="/home.css">
 <body>
@@ -12,37 +12,39 @@
       <div class="top" >
         <div class="logo"></div>
         <div class="buttons">
-          <a href="/items/<%= arr.id %>"> my items </a>
-          <a href="/seller">start selling </a>
-          <div class="sort" id="4">All</div>
-          <div class="sort"id="1">Arts</div>
-          <div class="sort" id="2">Antiques</div>
-          <div class="sort" id="3">Used</div>
+          <a href="/items/<%= arr.id %>"> My Items </a>
+          <a style="color: red;" href="/seller">Start Selling </a>
                </div>
         <div class="user">    
           <img src="https://cdn-icons-png.flaticon.com/128/848/848043.png" alt=""> <%= arr.user %> </div>
        </div>
        </div>
  <br>
-     <div id="cv" class="items">
-        <% for (let index = 0; index < arr.items.length; index++) { %>
-           <div class="<%= arr.items[index].class %> item ">
-            <img src=<%= arr.items[index].url %> alt="">
-           <div class="a">
-        <div class="b">
-            <p> name: <%= arr.items[index].name %> </p>
-            <p> posted by: <%= arr.items[index].person %> </p>
-            <p> base price: <%= arr.items[index].base_price %> </p>
-                </div>
-           <div class="c">
-            <a href="/<%= arr.id %>/auction/item/<%= arr.items[index]._id %>">
-                <button class="butn"> go to auction</button>
-               </a>
-           </div>
-           </div>
-           </div>
-       <% } %>
-    </div>
+ <div class="main">
+  <div class="left">
+    <div class="sort" id="4">All</div>
+    <div class="sort"id="1">Arts</div>
+    <div class="sort" id="2">Antiques</div>
+    <div class="sort" id="3">Used</div>
+  </div>
+  <div id="cv" class="items">
+    <% for (let index = 0; index < arr.items.length; index++) { %>
+       <div class="<%= arr.items[index].class %> item ">
+        <img src=<%= arr.items[index].url %> alt="">
+    
+    <div class="b">
+        <p> Name: <%= arr.items[index].name %> </p>
+        <p> Posted By: <%= arr.items[index].person %> </p>
+        <p> Base Price: <%= arr.items[index].base_price %> </p>
+            </div>
+        <a href="/<%= arr.id %>/auction/item/<%= arr.items[index]._id %>">
+            <button class="butn"> Go To Auction</button>
+           </a>
+       </div>
+   <% } %>
+</div>
+ </div>
+    
   
 
 </body>

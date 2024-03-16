@@ -26,7 +26,7 @@ body{
 }
 .parallax {
   background-image: url(white.jpg);
-  /* height: 100vh;  */
+  height: 100vh; 
   background-repeat: no-repeat;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
   background-size: cover;
@@ -34,7 +34,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* animation: goaway 3s 1; */
+  animation: goaway 3s 1;
 }
 .items {
     display: flex;
@@ -69,7 +69,7 @@ body{
     margin: 30px;
 }
 .b{
-    width: 70%;
+    width: 100%;
 }
 .c{
     width: 30%;
@@ -83,12 +83,12 @@ body{
 }
 
 .butn{
-    background-color: limegreen;
-    border: solid black;
-    height: 40px;
+  background-color: #5EFBD6;
+  height: 40px;
     width: 100px;
     border-radius: 20px;
 }
+
 .main{
   display: flex;
   width: 100%;
@@ -114,7 +114,7 @@ body{
     flex-direction: column;
     z-index: 2;
    position: fixed;
-   /* transition: background-color 0.3s ease; */
+   transition: background-color 0.3s ease;
    background-color: black;
    z-index: 1;
 }
@@ -131,6 +131,9 @@ body{
 .user{
   width: 30%;
   height: 100%;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 .logo{
   width: 20%;
@@ -156,6 +159,9 @@ body{
   color: white;
   text-decoration: none;
   margin: 0;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   padding: 0;
 }
 .parallax a{
@@ -219,6 +225,11 @@ body{
   } to{
     margin-bottom: 0px;
   }
+}
+.sort{
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .comedown{
   animation: comedown 4s 1;

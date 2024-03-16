@@ -7,8 +7,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 const { MongoClient, ServerApiVersion } = require("mongodb");
-// mongoose.connect("mongodb+srv://koushik:koushik@cluster0.h2lzgvs.mongodb.net/projectv2");
-mongoose.connect("mongodb://127.0.0.1:27017/project");
+mongoose.connect("mongodb+srv://koushik:koushik@cluster0.h2lzgvs.mongodb.net/fsd-project");
+// mongoose.connect("mongodb://127.0.0.1:27017/project");
 app.get("/register", function (req, res) {
   res.sendFile(__dirname + "/views/register.html");
 });

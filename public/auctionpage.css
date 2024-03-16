@@ -5,6 +5,9 @@
    color: #F0F3FF;
    align-items: end;
 }
+.data{
+    color: white;
+}
 .box{
     margin: 50px ;
     margin-left: 150px;
@@ -27,7 +30,10 @@
 .main img{
     height: 300px;
     width: 400px;
+    margin: 30px;
     margin-right: 200px;
+    margin-bottom: 0;
+    border: solid;
 }
 .in{
     display: inline;
@@ -56,9 +62,10 @@
 .item img{
   height: 200px;
   width: 200px;
+  border: solid;
 }
 .butn{
-    background-color: limegreen;
+    background-color: #FCDAB7;
     border: solid white;
     width: 150px;
     height: 30px;
@@ -67,19 +74,19 @@ body{
     margin: 0;
     padding: 0;
     background-color:  #334756 ;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Cabin Sketch",cursive;
 }
 input{
     height: 50px;
     width: 400px;
     margin: 20px;
     padding: 10px;
-    margin-left: 600px;
+    margin-left: 650px;
     border-radius: 20px;
 }
 button{
     height: 50px;
-    width: 75px;
-    color: white;
-    background-color: lime;
+    width: 65px;
+    color: black;
+    background-color: #FCDAB7;
 }

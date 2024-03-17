@@ -7,8 +7,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 const { MongoClient, ServerApiVersion } = require("mongodb");
-// mongoose.connect("mongodb+srv://koushik:koushik@cluster0.h2lzgvs.mongodb.net/fsd-project");
-mongoose.connect("mongodb://127.0.0.1:27017/project");
+mongoose.connect("mongodb+srv://koushik:koushik@cluster0.h2lzgvs.mongodb.net/fsd-project");
+// mongoose.connect("mongodb://127.0.0.1:27017/project");
 app.get("/register", function (req, res) {
   res.sendFile(__dirname + "/views/register.html");
 });
@@ -94,55 +94,10 @@ app.get("/user/:email", async function (req, res) {
   });
 });
 
-// route for individual user items
-app.get("/items/:id", async function (req, res) {
-  await usermodel.findOne({ _id: req.params.id }).then((result) => {
-    if (result.items.length == 0) {
-      res.send("no items ");
-      return;
-    }
-    res.render("item", { arr: result });
-  });
-});
 //auction page for users
 
 app.get("/:userid/auction", async function (req, res) {
  res.sendFile(__dirname+"/views/auctionpage.html")
-});
-app.post("/:userid/auction/item/:itemid", function (req, res) {
-  console.log("heere");
-  var price = 0;
-  price = Number(req.body.bid);
-  var name = " ";
-  usermodel.findOne({ _id: req.params.userid }).then((result) => {
-    name = result.email;
-  });
-  itemmodel.findOne({ _id: req.params.itemid }).then((result) => {
-    if (!result) {
-      res.send("item sold");
-      return;
-    }
-    console.log(result);
-    if (price < result.current_price || price < result.base_price) {
-      console.log(price, typeof price);
-      console.log(
-        "/" + req.params.userid + "/auction/item/" + req.params.itemid
-      );
-      res.redirect(
-        "/" + req.params.userid + "/auction/item/" + req.params.itemid
-      );
-    } else {
-      itemmodel.findOne({ _id: req.params.itemid }).then((result) => {
-        result.current_price = price;
-        result.current_bidder = name;
-        result.current_bidder_id = req.params.userid;
-        result.save();
-        res.redirect(
-          "/" + req.params.userid + "/auction/item/" + req.params.itemid
-        );
-      });
-    }
-  });
 });
 
 //seller authentication

@@ -28,7 +28,7 @@
     font-family: cursive;
     text-shadow: 2px 2px black; 
      }
-    input{
+    input required{
         height: 12%;
         width: 80%;
         font-size: 20px;
@@ -45,7 +45,7 @@ color:  white;
  margin-top: 5px;
  margin-bottom: 5px;
     }
-    input::placeholder{
+    input ::placeholder{
         color: white;
         font-size: large;
     }
@@ -90,10 +90,10 @@ border: 1px solid rgba(255, 255, 255, 0.61);
         <h1 class="heading" style="text-align: center;">Register</h1>
         <form class="for" method="post" action="/sellerregister">
            <div class="l"> 
-            <input class="in" name="name" type="text" placeholder=" username">
-            <input class="in" name="phone" type="text" placeholder=" phone">
-            <input class="in" name="email" type="email" placeholder=" email">
-            <input class="in" type="text" placeholder="create password" name="pass" >
+            <input required class="in" name="name" type="text" placeholder=" username">
+            <input required class="in" name="phone" type="text" placeholder=" phone">
+            <input required class="in" name="email" type="email" placeholder=" email">
+            <input required class="in" type="text" placeholder="create password" name="pass" >
             <button class="btn" type="submit">register</button></div>
         </form>
     </div>

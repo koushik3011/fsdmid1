@@ -7,8 +7,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 const { MongoClient, ServerApiVersion } = require("mongodb");
-mongoose.connect("mongodb+srv://koushik:koushik@cluster0.h2lzgvs.mongodb.net/fsd-project");
-// mongoose.connect("mongodb://127.0.0.1:27017/project");
+// mongoose.connect("mongodb+srv://koushik:koushik@cluster0.h2lzgvs.mongodb.net/fsd-project");
+mongoose.connect("mongodb://127.0.0.1:27017/project");
 app.get("/register", function (req, res) {
   res.sendFile(__dirname + "/views/register.html");
 });
@@ -106,29 +106,8 @@ app.get("/items/:id", async function (req, res) {
 });
 //auction page for users
 
-app.get("/:userid/auction/item/:itemid", async function (req, res) {
-  var name = " ";
-  await usermodel.findOne({ _id: req.params.userid }).then((result) => {
-    name = result.email;
-  });
-  itemmodel.findOne({ _id: req.params.itemid }).then((result) => {
-    if (!result) {
-      res.send("item sold");
-      res.redirect("/user/" + req.params.userid);
-      return;
-    }
-    if (result.aution_active) {
-      res.send("item sold");
-      res.redirect("/user/" + req.params.userid);
-    }
-  
-    var data = {
-      user: req.params.userid,
-      username: name,
-      item: result,
-    };
-    res.render("auctionpage", { arr: data });
-  });
+app.get("/:userid/auction", async function (req, res) {
+ res.sendFile(__dirname+"/views/auctionpage.html")
 });
 app.post("/:userid/auction/item/:itemid", function (req, res) {
   console.log("heere");
